@@ -15,16 +15,18 @@ export default class MenuExampleBasic extends Component {
           name='editorials'
           active={activeItem === 'editorials'}
           onClick={this.handleItemClick}
+          href='/'
         >
-          Editorials
+          Home
         </Menu.Item>
 
         <Menu.Item
           name='reviews'
           active={activeItem === 'reviews'}
           onClick={this.handleItemClick}
+          href='/teams'
         >
-          Reviews
+          Teams
         </Menu.Item>
 
         <Menu.Item

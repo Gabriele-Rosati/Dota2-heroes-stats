@@ -1,5 +1,6 @@
 import React from 'react'
 import { Icon, Label, Menu, Table } from 'semantic-ui-react'
+
 const style = {
     h1: {
       background: 'darkred',
@@ -7,7 +8,7 @@ const style = {
   }
 
 const HeroTable = (props) => (
-  <Table celled style={style.h1}>
+  <Table celled fixed textAlign='center' style={style.h1}>
     <Table.Body>
       <Table.Row>
         <Table.Cell>Agility {props.heroData.base_agi} + {props.heroData.agi_gain}</Table.Cell>

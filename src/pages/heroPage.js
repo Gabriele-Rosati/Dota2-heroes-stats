@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import { Grid } from "semantic-ui-react";
 import  Herotable from "../components/table";
 import WinRateTable from "../components/winrateTable";
+import Navbar from '../components/navbar'
 function HeroPage(props) {
     const {name} = useParams()
     console.log(name)
@@ -21,6 +22,7 @@ function HeroPage(props) {
 
     return (
         <div>
+            <Navbar></Navbar>
             <h1>{hero.localized_name}</h1>
             <br></br>
             <Grid>

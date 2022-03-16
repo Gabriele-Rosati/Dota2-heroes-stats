@@ -7,7 +7,7 @@ const style = {
   }
 
 const WinRateTable = (props) => (
-  <Table celled style={style.h1}>
+  <Table fixed celled style={style.h1} textAlign='center'>
         <Table.Body>
         <Table.Row>
             <Table.Cell><h3>Bracket</h3></Table.Cell>
@@ -53,6 +53,11 @@ const WinRateTable = (props) => (
             <Table.Cell>Immortal</Table.Cell>
             <Table.Cell>{props.heroData['8_pick']}</Table.Cell>
             <Table.Cell>{props.heroData['8_win'] * 100 / props.heroData['8_pick']} %</Table.Cell>
+        </Table.Row>
+        <Table.Row>
+            <Table.Cell>Turbo</Table.Cell>
+            <Table.Cell>{props.heroData['turbo_picks']}</Table.Cell>
+            <Table.Cell>{props.heroData['turbo_wins'] * 100 / props.heroData['turbo_picks']} %</Table.Cell>
         </Table.Row>
         </Table.Body>
   </Table>
