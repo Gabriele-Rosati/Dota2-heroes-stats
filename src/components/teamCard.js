@@ -1,6 +1,6 @@
 import React from 'react'
 import { Card, Image } from 'semantic-ui-react'
-import aa from '../images/Axe.jpg'
+
 
 const style = {
     h1: {
@@ -11,14 +11,23 @@ const style = {
 const TeamCard = (props) => {
      let url = `/teams/${props.data.team_id}`; 
     return(
-        <div className='heroCard'>       
-            <Card style={style.h1}  id={props.data.id}>
-            <Image src={props.data.logo_url} wrapped ui={false} />
+        <div>       
+            <Card style={style.h1} id='teamCard'>
+            <Image size='massive' src={props.data.logo_url}/>
             <Card.Content>
             <Card.Header>{props.data.name}</Card.Header>
             <Card.Meta>
                 <span className='date'>{props.data.tag}</span>
             </Card.Meta>
+            <Card.Description>
+                Games played: {props.data.rating}
+            </Card.Description>
+            <Card.Description>
+                Games played: {props.data.wins}
+            </Card.Description>
+            <Card.Description>
+                Games played: {props.data.losses}
+            </Card.Description>
             </Card.Content>
             <Card.Content extra>
             <a href={url}>

@@ -1,12 +1,26 @@
 import Navbar from '../components/navbar'
 import TeamCard from '../components/teamCard'
-import { Grid, Divider, Header, Container } from 'semantic-ui-react'
+import { Grid, Divider, Header } from 'semantic-ui-react'
+import Footer from '../components/footer';
 
 function Teams(props) {
-    const teamCard = props.teamsData.map(function(item) {
+    let sortData = props.teamsData.sort(function(a, b) {
+        const nameA = a.name.toUpperCase(); // ignore upper and lowercase
+        const nameB = b.name.toUpperCase(); // ignore upper and lowercase
+        if (nameA < nameB) {
+          return -1;
+        }
+        if (nameA > nameB) {
+          return 1;
+        }
+      
+        // names must be equal
+        return 0;
+      });
+    const teamCard = sortData.map(function(item) {
         return (
-            <div>
-                    <TeamCard data={item} key={item.id}></TeamCard>
+            <div key={item.team_id}>
+                    <TeamCard data={item}></TeamCard>
                     <Divider hidden />
             </div>
         )
@@ -14,12 +28,14 @@ function Teams(props) {
     return(
         <div>
             <Navbar></Navbar>
-            <Header as='h1'>Dota Heroes</Header>
+            <Header as='h1'>Dota Teams</Header>
             <hr></hr>
             <br></br>
-            <Grid stackable>
+            <Grid centered stackable>
                 {teamCard}
             </Grid>
+            <br></br>
+            <Footer></Footer>
         </div>
     )
 

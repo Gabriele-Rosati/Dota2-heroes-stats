@@ -1,18 +1,29 @@
-import Card from '../components/card'
-import _ from 'lodash'
-import Axe from '../images/Axe.jpg'
-import AntiMage from '../images/anti-mage.jpg'
-import { Grid, Divider, Header, Container } from 'semantic-ui-react'
+import HeroCard from '../components/card'
+import { Grid, Divider, Header } from 'semantic-ui-react'
 import Navbar from '../components/navbar'
+import Footer from '../components/footer'
 
 
 function Home(props) {
     console.log(props.data[1].localized_name)
     console.log( props.data.length)
-    const cards = props.data.map(function(item) {
+    let sortData = props.data.sort(function(a, b) {
+        const nameA = a.localized_name.toUpperCase(); // ignore upper and lowercase
+        const nameB = b.localized_name.toUpperCase(); // ignore upper and lowercase
+        if (nameA < nameB) {
+          return -1;
+        }
+        if (nameA > nameB) {
+          return 1;
+        }
+      
+        // names must be equal
+        return 0;
+      });
+    const cards = sortData.map(function(item) {
         return (
-            <div>
-                    <Card data={item} key={item.id}></Card>
+            <div key={item.id}>   
+                    <HeroCard data={item}></HeroCard>
                     <Divider hidden />
             </div>
         )
@@ -23,9 +34,11 @@ function Home(props) {
             <Header as='h1'>Dota Heroes</Header>
             <hr></hr>
             <br></br>
-            <Grid stackable>
+            <Grid stackable textAlign='center'>
                 {cards}
             </Grid>
+            <br></br>
+            <Footer></Footer>
         </div>
     )
 

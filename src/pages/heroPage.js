@@ -3,14 +3,15 @@ import { Grid } from "semantic-ui-react";
 import  Herotable from "../components/table";
 import WinRateTable from "../components/winrateTable";
 import Navbar from '../components/navbar'
+import Footer from "../components/footer";
 function HeroPage(props) {
     const {name} = useParams()
     console.log(name)
     let hero;
     props.data.map(function(item) {
-        if(name == item.localized_name){
+        if(name === item.localized_name){
             hero = item;
-            return
+            return true
         }
     })
     console.log(hero)
@@ -32,11 +33,15 @@ function HeroPage(props) {
             </Grid.Column>
             </Grid.Row>
             </Grid>
+            <h1>{hero.attack_type}</h1>
             <h2>Base Stats</h2>
+            <br></br>
             <Herotable heroData={hero}></Herotable>
             <br></br>
             <h2>Win Rate</h2>
             <WinRateTable heroData={hero}></WinRateTable>
+            <br></br>
+            <Footer></Footer>
         </div>
     )
 

@@ -16,3 +16,13 @@ code {
 #root{
   background-color: darkred;
 }
+
+#teamCard{
+  width: 300px;
+  height: 500px;
+}
+
+#footer{
+  background-color: black;
+  height: 200px;
+}
