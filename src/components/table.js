@@ -40,6 +40,23 @@ const HeroTable = (props) => (
   <br></br>
   <Statistic.Group widths='three' size='small'>
     <Statistic>
+    <Statistic.Value>{props.heroData.base_mana}</Statistic.Value>
+    <Statistic.Label>Mana</Statistic.Label>
+    </Statistic>
+
+    <Statistic>
+    <Statistic.Value >{props.heroData.base_mana_regen}</Statistic.Value>
+    <Statistic.Label>Mana Regen</Statistic.Label>
+    </Statistic>
+
+    <Statistic>
+    <Statistic.Value>{props.heroData.attack_rate}</Statistic.Value>
+    <Statistic.Label>Attack rate</Statistic.Label>
+    </Statistic>
+  </Statistic.Group>
+  <br></br>
+  <Statistic.Group widths='three' size='small'>
+    <Statistic>
     <Statistic.Value>{props.heroData.move_speed}</Statistic.Value>
     <Statistic.Label>Movement Speed</Statistic.Label>
     </Statistic>

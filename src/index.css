@@ -19,10 +19,24 @@ code {
 
 #teamCard{
   width: 300px;
-  height: 500px;
+  height: 400px;
 }
 
 #footer{
   background-color: black;
+  height: 200px;
+}
+
+#segmentId{
+  background-image: url("./images/dota-2-logo.jpg");
+}
+
+#teamImage{
+  width: auto;
+  height: 200px;
+}
+
+#tableImage{
+  width: auto;
   height: 200px;
 }

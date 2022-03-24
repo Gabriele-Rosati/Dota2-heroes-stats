@@ -1,12 +1,13 @@
 import React, { Component } from "react";
 import { Grid } from "semantic-ui-react";
 import Roster from '../components/Roster'
+import RecentMatches from "../components/recentMatches";
 
 
 class TestPage extends Component {
   constructor(props) {
     super(props);
-    this.state = { data: [], tag: this.props.tag, players: []};
+    this.state = { data: [], tag: this.props.tag, players: [], matchData: this.props.matchData, teamData:this.props.teamData};
   }
 
   async componentDidMount() {
@@ -39,6 +40,7 @@ class TestPage extends Component {
             <h1>Current Roster</h1>
             <br></br>
             <Roster data={this.state.data} players={this.state.players}></Roster>
+            <RecentMatches teamData={this.state.teamData} matchData={this.state.matchData}></RecentMatches>
       </div>
     )
   }

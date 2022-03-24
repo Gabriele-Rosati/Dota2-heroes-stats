@@ -1,6 +1,7 @@
 import React from 'react'
 import { Card, Image } from 'semantic-ui-react'
 import aa from '../images/Axe.jpg'
+import { GiPocketBow, GiCrossedSwords } from 'react-icons/gi';
 
 const style = {
     h1: {
@@ -9,7 +10,7 @@ const style = {
   }
 
 const HeroCard = (props) => {
-    let url = `/hero/${props.data.localized_name}`; 
+    let url = `/heroes/${props.data.hero_id}`; 
     const roles = props.data.roles.map(function(item) {
         return item + "  ";
     })
@@ -20,7 +21,7 @@ const HeroCard = (props) => {
             <Card.Content>
             <Card.Header>{props.data.localized_name}</Card.Header>
             <Card.Meta>
-                <span className='date'>{props.data.attack_type}</span>
+                <span className='date'> {(props.data.attack_type == 'Melee') ? <GiCrossedSwords/> : <GiPocketBow/>}</span>
             </Card.Meta>
             <Card.Description>
                 {roles}

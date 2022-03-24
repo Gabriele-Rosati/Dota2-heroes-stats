@@ -33,8 +33,9 @@ export default class MenuExampleBasic extends Component {
           name='upcomingEvents'
           active={activeItem === 'upcomingEvents'}
           onClick={this.handleItemClick}
+          href='/heroes'
         >
-          Upcoming Events
+          Heroes
         </Menu.Item>
       </Menu>
     )

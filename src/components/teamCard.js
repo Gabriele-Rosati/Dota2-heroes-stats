@@ -13,20 +13,20 @@ const TeamCard = (props) => {
     return(
         <div>       
             <Card style={style.h1} id='teamCard'>
-            <Image size='massive' src={props.data.logo_url}/>
+            <Image size='massive' src={props.data.logo_url} id='teamImage'/>
             <Card.Content>
             <Card.Header>{props.data.name}</Card.Header>
             <Card.Meta>
                 <span className='date'>{props.data.tag}</span>
             </Card.Meta>
             <Card.Description>
-                Games played: {props.data.rating}
+                Rating: {props.data.rating}
             </Card.Description>
             <Card.Description>
-                Games played: {props.data.wins}
+                Wins: {props.data.wins}
             </Card.Description>
             <Card.Description>
-                Games played: {props.data.losses}
+                Losses: {props.data.losses}
             </Card.Description>
             </Card.Content>
             <Card.Content extra>
