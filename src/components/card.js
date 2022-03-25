@@ -1,6 +1,5 @@
 import React from 'react'
 import { Card, Image } from 'semantic-ui-react'
-import aa from '../images/Axe.jpg'
 import { GiPocketBow, GiCrossedSwords } from 'react-icons/gi';
 
 const style = {
@@ -11,13 +10,14 @@ const style = {
 
 const HeroCard = (props) => {
     let url = `/heroes/${props.data.hero_id}`; 
+    const imageURL = `http://cdn.dota2.com${props.data.img}`
     const roles = props.data.roles.map(function(item) {
         return item + "  ";
     })
     return(
         <div className='heroCard'>       
             <Card style={style.h1}  id={props.data.id}>
-            <Image src={aa} wrapped ui={false} />
+            <Image src={imageURL} wrapped ui={false} />
             <Card.Content>
             <Card.Header>{props.data.localized_name}</Card.Header>
             <Card.Meta>

@@ -1,5 +1,5 @@
 import { Image, Card, Icon } from 'semantic-ui-react'
-import image from '../images/anti-mage.jpg'
+
 
 function Matchup(props) {
     // console.log(props.matchup)
@@ -19,12 +19,13 @@ function Matchup(props) {
     
     let filterData = props.data.filter(item => item.hero_id == props.matchup.hero_id)
     let url = `/heroes/${filterData[0].hero_id}`;
+    const imageURL = `http://cdn.dota2.com${filterData[0].img}`
     return(
       <Card style={(props.matchup.wins * 100 / props.matchup.games_played >= 50) ? style.h1 : style.h2}>
       <Card.Content>
         <Image
           size='small'
-          src={image}
+          src={imageURL}
         />
         <Card.Header>{filterData[0].localized_name}</Card.Header>
         <Card.Description>
