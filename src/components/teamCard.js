@@ -12,7 +12,7 @@ const TeamCard = (props) => {
      let url = `/teams/${props.data.team_id}`; 
     return(
         <div>       
-            <Card style={style.h1} id='teamCard'>
+            <Card style={style.h1} className='teamCard'>
             <Image size='massive' src={props.data.logo_url} id='teamImage'/>
             <Card.Content>
             <Card.Header>{props.data.name}</Card.Header>

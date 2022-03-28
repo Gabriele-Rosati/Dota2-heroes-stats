@@ -1,14 +1,9 @@
 import { Container } from "semantic-ui-react"
-import { Button, Icon,Segment,List,Header, Grid } from "semantic-ui-react"
-const style = {
-    h1: {
-      color: 'white',
-    }
-  }
+import { Segment,List,Header, Grid } from "semantic-ui-react"
 
 function Footer() {
     return(
-        <div id='footer'>
+        <div className='footer'>
     <Segment inverted vertical style={{ padding: '5em 0em' }}>
       <Container>
         <Grid divided inverted stackable>

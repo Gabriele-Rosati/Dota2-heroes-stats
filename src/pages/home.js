@@ -103,6 +103,7 @@ class DesktopContainer extends Component {
                 </Menu.Item>
                 <Menu.Item as='a' href='/heroes'>Heroes</Menu.Item>
                 <Menu.Item as='a' href='/teams'>Teams</Menu.Item>
+                <Menu.Item as='a' href='/items'>Items</Menu.Item>
                 <Menu.Item position='right'>
                   <Button as='a' inverted={!fixed}>
                     Log in
@@ -154,7 +155,7 @@ class MobileContainer extends Component {
             </Menu.Item>
             <Menu.Item as='a' href='/heroes'>Heroes</Menu.Item>
             <Menu.Item as='a' href='/teams'>Teams</Menu.Item>
-            <Menu.Item as='a'>Careers</Menu.Item>
+            <Menu.Item as='a' href='/items'>Items</Menu.Item>
             <Menu.Item as='a'>Log in</Menu.Item>
             <Menu.Item as='a'>Sign Up</Menu.Item>
           </Sidebar>

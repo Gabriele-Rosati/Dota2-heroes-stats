@@ -5,6 +5,8 @@ import HeroPage from './pages/heroPage'
 import Teams from './pages/teams';
 import TeamPage from './pages/teamPage';
 import Heroes from './pages/heroes';
+import ItemsPage from './pages/itemsPage'
+import ItemPage from './pages/itemPage';
 
 
 function App(props) {
@@ -17,6 +19,8 @@ function App(props) {
             <Route path="/heroes/:id" element={<HeroPage data={props.data}/>} />
             <Route path="/teams" element={<Teams teamsData={props.teamsData}/>} />
             <Route exact path="/teams/:tag" element={<TeamPage players={props.proPlayersData}/>} />
+            <Route path="/items" element={<ItemsPage/>} />
+            <Route path="/items/:name" element={<ItemPage/>} />
         </Routes>
       </Router>
     </div>

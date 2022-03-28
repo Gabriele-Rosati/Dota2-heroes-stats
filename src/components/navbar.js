@@ -12,8 +12,8 @@ export default class MenuExampleBasic extends Component {
     return (
       <Menu inverted>
         <Menu.Item
-          name='editorials'
-          active={activeItem === 'editorials'}
+          name='home'
+          active={activeItem === 'home'}
           onClick={this.handleItemClick}
           href='/'
         >
@@ -21,8 +21,8 @@ export default class MenuExampleBasic extends Component {
         </Menu.Item>
 
         <Menu.Item
-          name='reviews'
-          active={activeItem === 'reviews'}
+          name='teams'
+          active={activeItem === 'teams'}
           onClick={this.handleItemClick}
           href='/teams'
         >
@@ -30,12 +30,21 @@ export default class MenuExampleBasic extends Component {
         </Menu.Item>
 
         <Menu.Item
-          name='upcomingEvents'
-          active={activeItem === 'upcomingEvents'}
+          name='heroes'
+          active={activeItem === 'heroes'}
           onClick={this.handleItemClick}
           href='/heroes'
         >
           Heroes
+        </Menu.Item>
+
+        <Menu.Item
+          name='items'
+          active={activeItem === 'items'}
+          onClick={this.handleItemClick}
+          href='/items'
+        >
+          Items
         </Menu.Item>
       </Menu>
     )

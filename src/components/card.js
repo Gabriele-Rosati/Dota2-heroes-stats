@@ -15,8 +15,8 @@ const HeroCard = (props) => {
         return item + "  ";
     })
     return(
-        <div className='heroCard'>       
-            <Card style={style.h1}  id={props.data.id}>
+        <div>       
+            <Card style={style.h1}  id={props.data.id} className='heroCard'>
             <Image src={imageURL} wrapped ui={false} />
             <Card.Content>
             <Card.Header>{props.data.localized_name}</Card.Header>
