@@ -4,7 +4,7 @@ import { Card, Image } from 'semantic-ui-react'
 
 const style = {
     h1: {
-      background: 'orange',
+      background: 'purple',
     }
   }
 

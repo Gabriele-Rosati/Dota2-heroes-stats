@@ -8,17 +8,21 @@ import { useEffect, useState } from 'react'
 import Matchup from "../components/matchup";
 import { GiPocketBow, GiCrossedSwords } from 'react-icons/gi';
 import ItemList from "../components/ItemList";
+import Replays from "../components/replays";
 
 function HeroPage(props) {
     const { id } = useParams()
     let hero;
     const [matchups, setMatchups] = useState([])
+    const [matches, setMatches] = useState([])
 
 
     useEffect(() => {
         const getData = async () => {
             const dataFromserver = await fetchMatchups();
             setMatchups(dataFromserver)
+            const matchFromServer = await fetchMatches();
+            setMatches(matchFromServer)
         }
         getData()
     }, [])
@@ -29,7 +33,12 @@ function HeroPage(props) {
         return json
 
     }
+    const fetchMatches = async () => {
+        const res = await fetch(`https://api.opendota.com/api/heroes/${id}/matches`)
+        const json = await res.json();
+        return json
 
+    }
 
     props.data.map(function (item) {
         if (id == item.hero_id) {
@@ -116,6 +125,8 @@ function HeroPage(props) {
             </Grid>
             <br></br>
             <ItemList></ItemList>
+            <br></br>
+            <Replays data={props.data} id={id}/>
             <br></br>
             <Footer></Footer>
         </div>

@@ -2,7 +2,7 @@ import { Card, Image } from 'semantic-ui-react'
 
 const style = {
     h1: {
-      background: 'orange',
+      background: 'purple',
     }
   }
 
@@ -11,7 +11,7 @@ function PlayerCard(props) {
         return (parseFloat(number).toPrecision(4));
     }
     return(
-        <div className='heroCard'>       
+        <div>       
             <Card style={style.h1}  id={props.data.account_id}>
             <Image src={props.data.avatarfull} wrapped ui={false} />
             <Card.Content>

@@ -4,7 +4,7 @@ import { GiPocketBow, GiCrossedSwords } from 'react-icons/gi';
 
 const style = {
     h1: {
-      background: 'orange',
+      background: 'purple',
     }
   }
 

@@ -6,9 +6,10 @@ const HeroTable = (props) => {
   function strip(number) {
     return (parseFloat(number).toPrecision(2));
 }
+console.log(window.innerWidth);
   return(
     <div>
-    <Statistic.Group widths='three' size='small'>
+    <Statistic.Group widths='three' size={(window.innerWidth > 500) ? 'small' : 'tiny'}>
       <Statistic>
       <Statistic.Value>{props.heroData.base_agi} + {props.heroData.agi_gain}</Statistic.Value>
       <Statistic.Label>Agility</Statistic.Label>
@@ -25,7 +26,7 @@ const HeroTable = (props) => {
       </Statistic>
     </Statistic.Group>
     <br></br>
-    <Statistic.Group widths='three' size='small'>
+    <Statistic.Group widths='three' size={(window.innerWidth > 500) ? 'small' : 'tiny'}>
       <Statistic>
       <Statistic.Value>{strip(props.heroData.base_armor + ((props.heroData.base_agi * 0.167)))}</Statistic.Value>
       <Statistic.Label>Armor</Statistic.Label>
@@ -37,12 +38,12 @@ const HeroTable = (props) => {
       </Statistic>
 
       <Statistic>
-      <Statistic.Value>{props.heroData.base_health_regen + (props.heroData.base_str * 0.1)}</Statistic.Value>
+      <Statistic.Value>{strip(props.heroData.base_health_regen + (props.heroData.base_str * 0.1))}</Statistic.Value>
       <Statistic.Label>Health Regen</Statistic.Label>
       </Statistic>
     </Statistic.Group>
     <br></br>
-    <Statistic.Group widths='three' size='small'>
+    <Statistic.Group widths='three' size={(window.innerWidth > 500) ? 'small' : 'tiny'}>
       <Statistic>
       <Statistic.Value>{props.heroData.base_mana +( props.heroData.base_int * 12)}</Statistic.Value>
       <Statistic.Label>Mana</Statistic.Label>
@@ -59,10 +60,10 @@ const HeroTable = (props) => {
       </Statistic>
     </Statistic.Group>
     <br></br>
-    <Statistic.Group widths='three' size='small'>
+    <Statistic.Group widths='three' size={(window.innerWidth > 500) ? 'small' : 'tiny'}>
       <Statistic>
       <Statistic.Value>{props.heroData.move_speed}</Statistic.Value>
-      <Statistic.Label>Movement Speed</Statistic.Label>
+      <Statistic.Label>Mov Speed</Statistic.Label>
       </Statistic>
 
       <Statistic>

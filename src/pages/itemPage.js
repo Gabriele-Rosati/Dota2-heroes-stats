@@ -34,10 +34,10 @@ function ItemPage() {
     if(data !== ''){
         const item = data[name];
         const imageURL = `https://cdn.cloudflare.steamstatic.com${item['img']}`
-        const attrib = item.attrib.map(function(item) {
+        const attrib = item.attrib.map(function(attribute) {
             return(
-                <div>
-                <h2>{item.footer}: {item.header}{(item.value.constructor === Array) ? item.value[0] : item.value} </h2>
+                <div key={item.attrib.indexOf(attribute)}> 
+                <h2>{attribute.footer}: {attribute.header}{(attribute.value.constructor === Array) ? attribute.value[0] : attribute.value} </h2>
                 </div>
             )
         })
@@ -47,7 +47,7 @@ function ItemPage() {
                     const imageComponent = `https://cdn.cloudflare.steamstatic.com${data[component].img}`
                     const imagehref = `/items/${component}`
                     return(
-                        <div id={data[name].id}>
+                        <div key={data[component].id}>
                             <Image src={imageComponent} centered href={imagehref}/>
                             <p>{data[component].dname}</p>
                         </div>
@@ -71,7 +71,7 @@ function ItemPage() {
                 <h3>{(item.hint !== undefined) ? item.hint[0] : null}</h3>
                 <h3>{item.notes}</h3>
                 <br/>
-                <h2>{(item.attrib !== []) ? null : 'Base attributes'}</h2>
+                <h2>{(item.attrib[0] !== undefined) ? 'Base attributes' : null}</h2>
                 <Grid textAlign='center'>
                     {attrib}
                 </Grid>
@@ -80,6 +80,7 @@ function ItemPage() {
                 <Grid textAlign='center'>
                     {checkComponents()}
                 </Grid>
+                <br/>
                 <br/>
                 <Footer/>
             </div>

@@ -14,7 +14,6 @@ function RecentMatches() {
         const getData = async () => {
             const dataFromserver = await fetchMatchData();
             setMatchData(dataFromserver)
-            console.log(dataFromserver)
             const dataFromserver2 = await fetchTeamData();
             setTeamData(dataFromserver2)
     

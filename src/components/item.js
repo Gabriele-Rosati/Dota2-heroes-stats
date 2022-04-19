@@ -4,7 +4,7 @@ import LoaderExampleLoader from "./loader"
 
 const style = {
     h1: {
-      background: 'orange',
+      background: 'purple',
     },
     h2: {
         height: '200px',
@@ -33,7 +33,6 @@ function Item(props) {
     }
 
     const item = items[props.itemName]
-    console.log(item)
 
 
     if (item === undefined) {

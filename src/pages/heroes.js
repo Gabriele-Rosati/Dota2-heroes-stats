@@ -9,6 +9,7 @@ import { useState } from 'react'
 function Heroes(props) {
 
     const [heroes, setHeroes] = useState(props.data)
+    const [message, setMessage] = useState('')
     const carry = 'Carry'
     const support = 'Support'
 
@@ -53,6 +54,7 @@ function Heroes(props) {
             if (inputVal === 'anti mage') {
                 let amFilter = props.data.filter(item => item.localized_name == 'Anti-Mage')
                 setHeroes(amFilter)
+                setMessage('')
             }
             else {
 
@@ -60,11 +62,13 @@ function Heroes(props) {
                 let filter = props.data.filter(item => (filterName(item, inputVal)))
                 if (filter.length !== 0) {
                     setHeroes(filter)
+                    setMessage('')
 
                 }
                 else {
-                    let errorFilter = [{ "localized_name": "no heroes found", "roles": [], "img": "/apps/dota2/images/dota_react/heroes/antimage.png?", "icon": "/apps/dota2/images/dota_react/heroes/icons/antimage.png?", "base_health": 200, "base_health_regen": 0.25, "base_mana": 75, "base_mana_regen": 0, "base_armor": 0, "base_mr": 25, "base_attack_min": 29, "base_attack_max": 33, "base_str": 21, "base_agi": 24, "base_int": 12, "str_gain": 1.6, "agi_gain": 2.8, "int_gain": 1.8, "attack_range": 150, "projectile_speed": 0, "attack_rate": 1.4, "move_speed": 310, "turn_rate": null, "cm_enabled": true, "legs": 2, "hero_id": 1, "turbo_picks": 380046, "turbo_wins": 192004, "pro_ban": 434, "pro_win": 65, "pro_pick": 139, "1_pick": 34185, "1_win": 16613, "2_pick": 51839, "2_win": 25436, "3_pick": 57549, "3_win": 28239, "4_pick": 46704, "4_win": 23003, "5_pick": 27527, "5_win": 13149, "6_pick": 12310, "6_win": 5849, "7_pick": 5602, "7_win": 2654, "8_pick": 2044, "8_win": 962, "null_pick": 2129127, "null_win": 0 }]
+                    let errorFilter = []
                     setHeroes(errorFilter)
+                    setMessage('No Heroes found')
                 }
             }
         }
@@ -96,6 +100,7 @@ function Heroes(props) {
             <Grid stackable textAlign='center'>
                 {cards}
             </Grid>
+            {(message !== '') ? <h1>{message}</h1> : null}
             <br></br>
             <Footer/>
         </div>

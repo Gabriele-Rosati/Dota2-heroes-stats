@@ -70,6 +70,7 @@ function ItemsPage() {
             {getDataResult()}    
         </Grid>
         <br></br>
+        <br></br>
         <Footer/>
     </div>
   )

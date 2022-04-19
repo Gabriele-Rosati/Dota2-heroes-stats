@@ -272,6 +272,35 @@ const HomepageLayout = () => (
       </Grid>
     </Segment>
 
+    <Segment style={{ padding: '8em 0em' }} vertical>
+      <Grid container stackable verticalAlign='middle'>
+        <Grid.Row>
+          <Grid.Column width={8}>
+            <Header as='h3' style={{ fontSize: '2em' }}>
+              See all Heroes Statistics
+            </Header>
+            <p style={{ fontSize: '1.33em' }}>
+                Base stats, win rate and more
+            </p>
+            <Header as='h3' style={{ fontSize: '2em' }}>
+              Check matchups and item popularity
+            </Header>
+            <p style={{ fontSize: '1.33em' }}>
+                Coming Soon
+            </p>
+          </Grid.Column>
+          <Grid.Column floated='right' width={6}>
+            <Image bordered centered size='medium' src={'https://cdn.cloudflare.steamstatic.com/apps/dota2/images/items/black_king_bar_lg.png?t=1593393829403%22'} />
+          </Grid.Column>
+        </Grid.Row>
+        <Grid.Row>
+          <Grid.Column textAlign='center'>
+            <Button size='huge' href='/items' color='black'>Go To Items page</Button>
+          </Grid.Column>
+        </Grid.Row>
+      </Grid>
+    </Segment>
+
     <h1>See what pro players say. </h1>
     <Segment style={{ padding: '0em' }} vertical>
       <Grid celled='internally' columns='equal' stackable>
